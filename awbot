@@ -163,7 +163,7 @@ ircmsgbreak() # facilitate message decomposition
   read $3 <<<"$mtail"
 }
 
-coproc irc { socat -T1000 - "OPENSSL:$server:$port",capath="$capath"; } 2>/dev/null
+coproc irc { socat -T1000 - "OPENSSL:$server:$port",method=tlsv1,capath="$capath"; } 2>/dev/null
 
 initstage=true   # start in initial stage
 logging=false    # logging starts once in the channel
