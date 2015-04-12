@@ -183,7 +183,7 @@ do
     [[ -n "$pass" ]] && ircwrite "pass $pass"
     # from here on, ignore everything NickServ has to say
     # send nick and user commands
-    ircwrite "nick $nick" "user $ircuser * * $ircname"
+    ircwrite "nick $nick" "user $ircuser * * :$ircname"
     # leave initial stage
     initstage=false
   elif [[ $mcmd == 433 ]]
